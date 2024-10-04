@@ -1,3 +1,35 @@
+# Project setup
+
+```bash
+$ yarn install
+```
+
+## Compile and run the project
+
+```bash
+# development
+$ yarn run start
+
+# watch mode
+$ yarn run start:dev
+
+# production mode
+$ yarn run start:prod
+```
+
+## Run tests
+
+```bash
+# unit tests
+$ yarn run test
+
+# e2e tests
+$ yarn run test:e2e
+
+# test coverage
+$ yarn run test:cov
+```
+
 # Commits Guide
 
 This project follows the **Conventional Commits** standard for maintaining a clear and structured commit history. The following describes the rules and how to commit correctly.
@@ -160,3 +192,7 @@ echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 - Clear communication of changes:\*\* Facilitates understanding of changes for team members and other stakeholders.
 - Enabling build and release processes:\*\* Enables automation of continuous integration and delivery.
 - Facilitates contributions:\*\* Makes commit history more accessible to new contributors.
+
+# ERD diagram
+
+![alt text](image.png)
