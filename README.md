@@ -196,3 +196,15 @@ echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 # ERD diagram
 
 ![alt text](image.png)
+
+# Production dependencies
+
+```bash
+yarn add pg @nestjs/swagger @nestjs/typeorm @nestjs/common class-transformer class-validator typeorm @nestjs/config
+```
+
+# Development dependencies
+
+```bash
+yarn add husky jest --dev
+```
