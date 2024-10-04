@@ -1,85 +1,162 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Commits Guide
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This project follows the **Conventional Commits** standard for maintaining a clear and structured commit history. The following describes the rules and how to commit correctly.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Commit Message Structure
 
-## Description
+A commit message must follow the following structure:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<type>[optional scope]: <description>.
 
-## Project setup
+[optional body]
+
+[optional footer]
+
+### Example
 
 ```bash
-$ yarn install
-```
+feat(auth): add login functionality
 
-## Compile and run the project
+Added login feature to the authentication module.
+```
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+BREAKING CHANGE: removed old login API endpoints
 ```
 
-## Run tests
+## Commit types
+
+The allowed commit types are as follows:
+
+- **build**: Changes that affect the build system or external dependencies (e.g. webpack, npm).
+- **chore**: Changes in the development process that do not affect the production code (e.g. tool configuration).
+- **CI**: Changes to CI configuration files and scripts (e.g. GitHub Actions, CircleCI).
+- **docs**: Changes to documentation (e.g. README, wiki).
+- **feat**: New end-user feature.
+- **fix**: Bug fixes.
+- **perf**: Changes that improve performance.
+- **refactor**: Changes to code that do not fix bugs or add features (e.g. renaming variables).
+- **style**: Changes that do not affect the meaning of the code, only the way it is written (e.g. formatting).
+- **test**: Adding tests or correcting existing tests.
+- **reverting**: Reverting a previous commit.
+
+## Commit rules
+
+- **non-empty type**: The type of the commit must not be empty.
+- **Non-empty subject**: The subject of the commit must not be empty.
+- **Header length**: The commit header must have a maximum length of 72 characters.
+- **Valid type**: The type of the commit must be in the list of allowed types.
+- **Body formatting**: The body of the commit, if included, must start with a blank line after the description and may contain multiple paragraphs.
+
+## Commit messages
+
+Here are some examples of how to structure your commit messages:
+t
+
+- **add a new feature**:
+  feat(auth): add login functionalityty
+
+- **Fix a bug**:
+  fix(parser): handle empty input
+
+- **Change API**:
+  feat(api)!: remove deprecated endpoints
+
+- **Update documentation**:
+  docs: update README with installation instructions
+
+- **Revert a change**:
+  revert: let us never again speak of the noodle incident
+
+Reverts commit 676104e.
+
+## Commit Hook Configuration
+
+To ensure that commit messages comply with these rules, we use the `commit-msg` hook provided by Husky. Make sure the configuration file is present and correctly configured in `.husky/commit-msg`.
+
+## How to Install and Configure Commitlint and Husky
+
+To install and configure Commitlint and Husky in your project, follow these steps:
+
+### Install Commitlint:
 
 ```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+npm install @commitlint/cli @commitlint/config-conventional --save-dev
 ```
 
-## Resources
+or in yarn
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+yarn add @commitlint/cli @commitlint/config-conventional --dev
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Commitlint Configuration File
 
-## Support
+The configuration file for `commitlint` in the project is located in `.commitlintrc.js` and contains the following rules:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```js
+module.exports = {
+  extends: [‘@commitlint/config-conventional’],
+  rules: {
+    header-max-length': [2, “always”, 72],
+    ‘type-empty’: [2, ‘never’],
+    ‘type-enum’: [
+      2,
+      ‘always’,
+      [
+        ‘build’,
+        ‘chore’,
+        ‘ci’,
+        ‘docs’,
+        ‘feat’,
+        ‘fix’,
+        ‘perf’,
+        ‘refactor’,
+        ‘style’,
+        ‘test’,
+        ‘revert’,
+      ],
+    ],
+    ‘subject-empty’: [2, ‘never’],
+    ‘subject-case’: [0],
+  },
+};
+```
 
-## Stay in touch
+#### Install Husky:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+npm install husky --save-dev
+```
 
-## License
+or in yarn
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```bash
+yarn add husky --dev
+```
+
+#### Enable Git hooks:
+
+```bash
+npx husky init
+```
+
+or in yarn
+
+```bash
+yarn husky init
+```
+
+#### Add commit-msg hook:
+
+```bash
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+## Why Use Conventional Commits
+
+- Automatic generation of CHANGELOGs:\*\* Makes it easy to create changelogs.
+- Automatic determination of version incrementation:\*\* Based on the types of commits made.
+- Clear communication of changes:\*\* Facilitates understanding of changes for team members and other stakeholders.
+- Enabling build and release processes:\*\* Enables automation of continuous integration and delivery.
+- Facilitates contributions:\*\* Makes commit history more accessible to new contributors.

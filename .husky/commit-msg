@@ -1,0 +1,1 @@
+yarn --no -- commitlint --edit $1
