@@ -9,7 +9,8 @@ import { EnvConfig } from './common/config/env.config';
 import { UserTransactionsModule } from './user-transactions/user-transactions.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { AppSeeder } from './common/seeders/app.seeder';
-import { RoleSeeder } from './common/seeders/role.seeder';
+import { RoleSeeder } from './common/seeders/roles.seeder';
+import { ProductsSeeder } from './common/seeders/products.seeder';
 
 @Module({
   imports: [
@@ -26,6 +27,6 @@ import { RoleSeeder } from './common/seeders/role.seeder';
     AuthModule,
   ],
   controllers: [],
-  providers: [AppSeeder, RoleSeeder],
+  providers: [AppSeeder, RoleSeeder, ProductsSeeder],
 })
 export class AppModule {}
