@@ -5,7 +5,7 @@ import { DataSource } from 'typeorm';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const datasource = app.get(DataSource);
-
+  app.setGlobalPrefix('api');
   if (datasource.isInitialized) {
     console.log('\n\nConnection with the database established\n\n');
   } else {
