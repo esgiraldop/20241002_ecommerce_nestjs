@@ -7,6 +7,9 @@ import { DatabaseConfigService } from './common/config/database.config';
 import { ConfigModule } from '@nestjs/config';
 import { EnvConfig } from './common/config/env.config';
 import { UserTransactionsModule } from './user-transactions/user-transactions.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { AppSeeder } from './common/seeders/app.seeder';
+import { RoleSeeder } from './common/seeders/role.seeder';
 
 @Module({
   imports: [
@@ -20,8 +23,9 @@ import { UserTransactionsModule } from './user-transactions/user-transactions.mo
     }),
     TypeOrmModule.forRootAsync({ useClass: DatabaseConfigService }),
     UserTransactionsModule,
+    AuthModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [AppSeeder, RoleSeeder],
 })
 export class AppModule {}

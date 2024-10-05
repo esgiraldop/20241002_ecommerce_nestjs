@@ -3,6 +3,7 @@ import { UserTransactions } from 'src/user-transactions/entities/user-transactio
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -20,6 +21,7 @@ export class User {
   password: string;
 
   @ManyToOne(() => Role, (role) => role.id)
+  @JoinColumn({ name: 'roleId' })
   role: Role;
 
   @OneToMany(() => UserTransactions, (userTransaction) => userTransaction.user)

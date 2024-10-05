@@ -200,7 +200,7 @@ echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
 # Production dependencies
 
 ```bash
-yarn add pg @nestjs/swagger @nestjs/typeorm @nestjs/common class-transformer class-validator typeorm @nestjs/config
+yarn add pg @nestjs/swagger @nestjs/typeorm @nestjs/common class-transformer class-validator typeorm @nestjs/config @nestjs/passport passport passport-local passport-jwt @nestjs/jwt
 ```
 
 # Development dependencies
